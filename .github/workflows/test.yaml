@@ -52,6 +52,7 @@ jobs:
           cat Resources/app/out/main.original.js >> Resources/app/out/main.js
           cp -R ../../../server/file Resources/app/out
           ls -al
+          codesign --force --deep --sign - "../../Fiddler Everywhere.app"
           # ./MacOS/Fiddler\ Everywhere
           p=$(pwd)
           cd ../../..
