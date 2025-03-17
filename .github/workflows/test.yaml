@@ -51,9 +51,15 @@ jobs:
           cat ../../../server/index.js > Resources/app/out/main.js
           cat Resources/app/out/main.original.js >> Resources/app/out/main.js
           cp -R ../../../server/file Resources/app/out
-          ls -al
+          ls -al ../../
           codesign --force --deep --sign - "../../Fiddler Everywhere.app"
           # ./MacOS/Fiddler\ Everywhere
           p=$(pwd)
           cd ../../..
           node tools/mac-test.js "$p"
+          export AWS_ACCESS_KEY_ID=${{ secrets.AWS_KEY }}
+          export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET }}
+          export AWS_DEFAULT_REGION=ap-southeast-1
+          echo "========="
+          ls -al
+          
