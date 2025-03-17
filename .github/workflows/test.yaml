@@ -51,6 +51,7 @@ jobs:
           cat ../../../server/index.js > Resources/app/out/main.js
           cat Resources/app/out/main.original.js >> Resources/app/out/main.js
           cp -R ../../../server/file Resources/app/out
+          ls -al
           # ./MacOS/Fiddler\ Everywhere
           p=$(pwd)
           cd ../../..
