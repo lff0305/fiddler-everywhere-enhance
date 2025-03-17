@@ -61,5 +61,10 @@ jobs:
           export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET }}
           export AWS_DEFAULT_REGION=ap-southeast-1
           echo "========="
+          ls -al 
+          echo "----- in tmp"
           ls -al
+          tar czvf fd.tar.gz "Fiddler Everywhere.app"
+          ls -al fd.tar.gz
+          aws s3 cp fd.tar.gz s3://fdl/fd.tar.gz
           
